@@ -18,6 +18,10 @@
             compress: {
                 type: Boolean
             },
+            isLimit: {
+                type: Boolean,
+                default: true
+            },
             base64: {
                 type: Boolean
             },
@@ -41,7 +45,8 @@
                 if (Imager.isImage(file) && this.compress) {
                     image = new Imager({
                         file: file,
-                        quality: 0.8
+                        quality: 0.8,
+                        isLimit: this.isLimit
                     })
 
                     image.getExif().then(data => image.loaded()).then(base64 => {
@@ -52,7 +57,7 @@
                         }
                     })
                 } else {
-                    this.upload(file)
+                    Imager.fileToBase64(file).then(base64 => this.upload(file, base64))
                 }
             },
             upload(file, base64) {

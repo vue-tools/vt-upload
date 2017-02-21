@@ -1,6 +1,6 @@
 {
   "name": "vt-upload",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/vue-tools/vt-upload"
@@ -38,6 +38,6 @@
     "compile": "npm run copy && node_modules/.bin/babel dist -d dist"
   },
   "dependencies": {
-    "Imager": "^0.1.4"
+    "Imager": "^0.1.5"
   }
 }
