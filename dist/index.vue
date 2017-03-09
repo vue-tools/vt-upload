@@ -27,7 +27,7 @@
             },
             accept: {
                 type: String,
-                default: 'image/*'
+                default: /mobile/i.test(window.navigator.appVersion) ? 'image/*' : ''
             }
         },
         methods: {
